@@ -22,7 +22,7 @@ services:
       - ./certbot/www:/var/www/certbot
       - ./certbot/data:/etc/letsencrypt
   certbot:
-    image: сertbot/certbot
+    image: certbot/certbot
     volumes:
       - ./certbot/www:/var/www/certbot
       - ./certbot/data:/etc/letsencrypt
