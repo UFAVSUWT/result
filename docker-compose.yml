@@ -17,11 +17,10 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    command: '/bin/sh -c ''while :; do sleep 12h & wait $$ ! ; nginx -s reload; done & nginx -g "deamon off;"'''
+    command: "/bin/sh -c 'while :; do sleep 12h & wait $$ ! ; nginx -s reload; done & nginx -g \"deamon off;\"'"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./static:/static
-      - ./certbot/www:/var/www/certbot
       - ./certbot/data:/etc/letsencrypt
   certbot:
     image: certbot/certbot
